@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bug_TrackingSystem.DAL.Data.Models
+﻿namespace Bug_TrackingSystem.DAL.Data.Models;
+public class Project
 {
-    internal class Project
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public virtual Manager Manager { get; set; }
-        public List<Developer> Developers { get; set;}
-        public List<Ticket> Tickets { get; set; }
-    }
+    public Guid Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public Manager? Manager { get; set; }
+    public ICollection<Developer> Developers { get; set;} = new HashSet<Developer>();
+    public ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
 }
