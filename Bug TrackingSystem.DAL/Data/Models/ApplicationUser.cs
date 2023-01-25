@@ -2,13 +2,7 @@
 using Bug_TrackingSystem.DAL.EnumDataType;
 
 namespace Bug_TrackingSystem.DAL.Data.Models;
-//public enum Type
-//{
-//    Admin,
-//    Manager,
-//    Developer,
-//    Tester
-//}
+
 public class ApplicationUser : IdentityUser<Guid>
 {
     public string Name { get; set; } = string.Empty;
